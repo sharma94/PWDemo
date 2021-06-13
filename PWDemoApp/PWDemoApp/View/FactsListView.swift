@@ -13,6 +13,7 @@ struct FactsListView: View {
     
     @ObservedObject var factsListVM: FactsListViewModel = FactsListViewModel()
     @State private var isLoading = false
+    @State var showAlert = false
     
     var body: some View {
     
@@ -42,8 +43,15 @@ struct FactsListView: View {
             .background(Color.clear)
             
         }.navigationViewStyle(StackNavigationViewStyle())
-        
+        .alert(isPresented: $factsListVM.hasError, content: {
+                    Alert(title: Text("Error"),
+                          message: Text(factsListVM.activeError?.localizedDescription ?? ""),
+                          primaryButton: .default(Text("Retry")) {
+                            factsListVM.getFacts()
+                          }, secondaryButton: .cancel())
+                })
     }
+    
 }
 
 struct FactsListView_Previews: PreviewProvider {
