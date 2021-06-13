@@ -14,15 +14,20 @@ struct FactsCellView: View {
         VStack(alignment: .leading, spacing: 8) {
 
             HStack {
-                Image("photo")
-               // RemoteImage(url: photoData.imageHref)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:70, height:70)
+                Group {
+                if let imageUrl = factData.imageHref {
+                    RemoteImage(url: imageUrl)
+                        .aspectRatio(contentMode: .fit)
+                } else {
+                    Image(systemName: "photo")
+                }
+                } .frame(width:50, height:50)
                 
-                VStack{
+                VStack(alignment: .leading, spacing:10){
                     Text(factData.title ?? "")
-                    Spacer()
+                        .fontWeight(.bold)
                     Text(factData.description ?? "")
+                        .fontWeight(.light)
                         .multilineTextAlignment(.leading)
                 }
             }

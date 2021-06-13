@@ -14,7 +14,14 @@ struct FactsListView: View {
     @ObservedObject var factsListVM: FactsListViewModel = FactsListViewModel()
     
     var body: some View {
-        Text(factsListVM.title)
+    
+        NavigationView {
+            List{
+                ForEach(factsListVM.factDetails, id: \.self) { data in
+                          FactsCellView(factData: data)
+                       }
+            }
+        }.navigationBarTitle(factsListVM.title)
     }
 }
 

@@ -40,6 +40,7 @@ class FactsListViewModel: ObservableObject {
                         let facts = try JSONDecoder().decode(Facts.self, from: properData)
                         //dump(facts)
                             DispatchQueue.main.async {
+                           
                                 self.title = facts.title
                                 self.factDetails = facts.rows
                             }
@@ -50,8 +51,4 @@ class FactsListViewModel: ObservableObject {
 
              }.resume()
         }
-
-    func deletePhoto(at index: Int) {
-        factDetails.remove(at: index )
-    }
 }
