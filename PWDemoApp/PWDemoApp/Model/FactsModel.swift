@@ -12,7 +12,7 @@ struct Facts: Codable {
     var rows: [FactDetails]
 }
 
-struct FactDetails: Codable, Hashable {
+struct FactDetails: Codable {
     var title: String?
     var description: String?
     var imageHref: String?

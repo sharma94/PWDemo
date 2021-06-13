@@ -7,21 +7,28 @@
 
 import SwiftUI
 import Foundation
-import Combine
 
 
 struct FactsListView: View {
+    
     @ObservedObject var factsListVM: FactsListViewModel = FactsListViewModel()
     
     var body: some View {
     
         NavigationView {
             List{
-                ForEach(factsListVM.factDetails, id: \.self) { data in
+                ForEach(factsListVM.factDetails, id: \.title) { data in
                           FactsCellView(factData: data)
                        }
-            }
-        }.navigationBarTitle(factsListVM.title)
+                
+            }.navigationBarItems(trailing:
+                Button(action: { factsListVM.loadData() }
+                ) {
+                Image(systemName: "arrow.clockwise")
+              })
+            .navigationBarTitle(factsListVM.title, displayMode: .inline)
+            .background(Color.clear)
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

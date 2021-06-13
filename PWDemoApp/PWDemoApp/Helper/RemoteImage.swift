@@ -17,11 +17,18 @@ struct RemoteImage: View {
         var data = Data()
         var state = LoadState.loading
 
-        init(url: String) {
-            guard let parsedURL = URL(string: url) else {
-                fatalError("Invalid URL: \(url)")
+        init(url: String?) {
+            
+            guard let urlString = url, !urlString.isEmpty else {
+                self.state = .failure
+                return
             }
-
+           
+            guard let parsedURL = URL(string: urlString) else {
+                self.state = .failure
+                return
+            }
+                
             URLSession.shared.dataTask(with: parsedURL) { data, response, error in
                 if let data = data, data.count > 0 {
                     self.data = data
@@ -34,6 +41,7 @@ struct RemoteImage: View {
                     self.objectWillChange.send()
                 }
             }.resume()
+    
         }
     }
 
@@ -65,12 +73,6 @@ struct RemoteImage: View {
                 return failure
             }
         }
-    }
-}
-
-struct RemoteImage_Previews: PreviewProvider {
-    static var previews: some View {
-        RemoteImage(url: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
     }
 }
 

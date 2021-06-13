@@ -68,6 +68,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B71515632676533F002CCFD2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B715156126764FDB002CCFD2 /* RemoteImage.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B79A01DA2676182A000118C0 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +95,7 @@
 		B79A01E52676182A000118C0 /* PWDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				B71515632676533F002CCFD2 /* Helper */,
 				B715155326761C14002CCFD2 /* View */,
 				B715155026761BF6002CCFD2 /* ViewModel */,
 				B715154D26761BC6002CCFD2 /* Model */,
@@ -95,7 +104,6 @@
 				B79A01EA2676182B000118C0 /* Assets.xcassets */,
 				B79A01EF2676182B000118C0 /* Info.plist */,
 				B79A01EC2676182B000118C0 /* Preview Content */,
-				B715156126764FDB002CCFD2 /* RemoteImage.swift */,
 			);
 			path = PWDemoApp;
 			sourceTree = "<group>";
