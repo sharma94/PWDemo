@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Facts: Codable {
+struct FactsResponse: Codable {
     var title: String
     var rows: [FactDetails]
 }

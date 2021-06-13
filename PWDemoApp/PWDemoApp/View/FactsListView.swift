@@ -12,23 +12,37 @@ import Foundation
 struct FactsListView: View {
     
     @ObservedObject var factsListVM: FactsListViewModel = FactsListViewModel()
+    @State private var isLoading = false
     
     var body: some View {
     
         NavigationView {
-            List{
-                ForEach(factsListVM.factDetails, id: \.title) { data in
-                          FactsCellView(factData: data)
-                       }
-                
-            }.navigationBarItems(trailing:
-                Button(action: { factsListVM.loadData() }
-                ) {
+            Group {
+                if factsListVM.isLoading {
+                    ProgressView()
+                        .scaleEffect(2.5, anchor: .center)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .secondary))
+
+                } else {
+                    List{
+                        ForEach(factsListVM.factDetails, id: \.title) { data in
+                            FactsCellView(factData: data)
+                        }
+                    }
+                }
+            }
+            .navigationBarItems(trailing:
+                Button(action: {
+                    factsListVM.getFacts()
+                }) {
                 Image(systemName: "arrow.clockwise")
-              })
+                }).disabled(isLoading)
+            
             .navigationBarTitle(factsListVM.title, displayMode: .inline)
             .background(Color.clear)
+            
         }.navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 
