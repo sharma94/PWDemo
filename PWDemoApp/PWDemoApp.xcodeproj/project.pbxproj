@@ -14,6 +14,7 @@
 		B715156226764FDB002CCFD2 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715156126764FDB002CCFD2 /* RemoteImage.swift */; };
 		B715156F26767E34002CCFD2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715156E26767E34002CCFD2 /* APIClient.swift */; };
 		B715157126767E8F002CCFD2 /* FactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715157026767E8F002CCFD2 /* FactsAPI.swift */; };
+		B73ED4D12676E89000394106 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73ED4D02676E89000394106 /* ProgressIndicator.swift */; };
 		B79A01E72676182A000118C0 /* PWDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A01E62676182A000118C0 /* PWDemoAppApp.swift */; };
 		B79A01E92676182A000118C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79A01E82676182A000118C0 /* ContentView.swift */; };
 		B79A01EB2676182B000118C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B79A01EA2676182B000118C0 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		B715156126764FDB002CCFD2 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		B715156E26767E34002CCFD2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B715157026767E8F002CCFD2 /* FactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPI.swift; sourceTree = "<group>"; };
+		B73ED4D02676E89000394106 /* ProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicator.swift; sourceTree = "<group>"; };
 		B79A01E32676182A000118C0 /* PWDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PWDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B79A01E62676182A000118C0 /* PWDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWDemoAppApp.swift; sourceTree = "<group>"; };
 		B79A01E82676182A000118C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				B715155426761C2D002CCFD2 /* FactsListView.swift */,
 				B715155626761C3D002CCFD2 /* FactsCellView.swift */,
+				B73ED4D02676E89000394106 /* ProgressIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				B715157126767E8F002CCFD2 /* FactsAPI.swift in Sources */,
 				B79A01E72676182A000118C0 /* PWDemoAppApp.swift in Sources */,
 				B715155526761C2D002CCFD2 /* FactsListView.swift in Sources */,
+				B73ED4D12676E89000394106 /* ProgressIndicator.swift in Sources */,
 				B715155E2676428C002CCFD2 /* FactsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -313,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -334,7 +338,7 @@
 				DEVELOPMENT_TEAM = D3QGZH7X39;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PWDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +360,7 @@
 				DEVELOPMENT_TEAM = D3QGZH7X39;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PWDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

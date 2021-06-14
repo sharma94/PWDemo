@@ -45,7 +45,7 @@ struct RemoteImage: View {
         }
     }
 
-    @StateObject private var loader: Loader
+    @ObservedObject private var loader: Loader
     var loading: Image
     var failure: Image
 
@@ -55,7 +55,7 @@ struct RemoteImage: View {
     }
 
     init(url: String, loading: Image = Image(systemName: "photo"), failure: Image = Image(systemName: "multiply.circle")) {
-        _loader = StateObject(wrappedValue: Loader(url: url))
+        _loader = ObservedObject(wrappedValue: Loader(url: url))
         self.loading = loading
         self.failure = failure
     }
