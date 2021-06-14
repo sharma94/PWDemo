@@ -20,9 +20,15 @@ struct FactsListView: View {
         NavigationView {
             Group {
                 if factsListVM.isLoading {
-                    ProgressView()
-                        .scaleEffect(2.5, anchor: .center)
-                        .progressViewStyle(CircularProgressViewStyle(tint: .secondary))
+                    if #available(iOS 14.0, *) {
+                        ProgressView()
+                            .scaleEffect(2.5, anchor: .center)
+                            .progressViewStyle(CircularProgressViewStyle(tint: .secondary))
+                    }
+                    else {
+                        ProgressIndicator(isAnimating: .constant(true), style: .large)
+                    }
+                   
 
                 } else {
                     List{
@@ -38,8 +44,8 @@ struct FactsListView: View {
                 }) {
                 Image(systemName: "arrow.clockwise")
                 }).disabled(isLoading)
-            
-            .navigationBarTitle(factsListVM.title, displayMode: .inline)
+            .navigationBarTitle(Text(factsListVM.title), displayMode: .inline)
+            //.navigationBarTitle(factsListVM.title, displayMode: .inline)
             .background(Color.clear)
             
         }.navigationViewStyle(StackNavigationViewStyle())

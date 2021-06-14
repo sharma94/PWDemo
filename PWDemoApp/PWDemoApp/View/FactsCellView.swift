@@ -13,9 +13,10 @@ struct FactsCellView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
 
-            VStack(alignment: .leading, spacing:10){
+            VStack(alignment: .leading, spacing:10) {
+
                     RemoteImage(url: factData.imageHref ?? "")
-                            .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fit)
                       
                     Text(factData.title ?? "")
                         .fontWeight(.bold)
